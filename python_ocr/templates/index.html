@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OCR Uygulaması</title>
+  </head>
+  <body>
+    <h1>OCR Uygulaması</h1>
+    {% if error %}
+      <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" required>
+      <button type="submit">Yükle ve OCR'ı Başlat</button>
+    </form>
+    {% if text %}
+      <h2>OCR Sonucu:</h2>
+      <pre>{{ text }}</pre>
+     <h1>.. Dosya özellikleri..</h1>
+     <h3>Dosya adi : {{dosayadi}}</h3> <br>
+     <h3>Dosya erisism tarihi : {{erisim_tarihi}}</h3>  <br>
+     <h3>Dosya degisism tarihi : {{degsism}}</h3>  <br>
+     <h3>dosya olusum tarihi: {{dosya_olusum_tarihi}}</h3> <br>
+     <h3>Dosya boyut : {{dosya_boyutu}}</h3> <br>
+    
+    
+      {% endif %}
+   
+  </body>
+</html>
